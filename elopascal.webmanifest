@@ -1,9 +1,9 @@
 {
-  "id": "./elopascal.html",
+  "id": "./",
   "name": "EloPascal",
   "short_name": "EloPascal",
   "description": "A Pascal editor, compiler, and interactive CRT terminal.",
-  "start_url": "./elopascal.html",
+  "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "orientation": "any",

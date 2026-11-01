@@ -1,6 +1,6 @@
-const CACHE_NAME = 'elopascal-app-v14';
+const CACHE_NAME = 'elopascal-app-v15';
 const APP_SHELL = [
-  './elopascal.html',
+  './index.html',
   './elopascal.webmanifest',
   './elo-app-icon-192.png',
   './elo-app-icon-512.png',
@@ -41,7 +41,7 @@ self.addEventListener('fetch', event => {
           }
           return response;
         })
-        .catch(async () => (await caches.match(request)) || caches.match('./elopascal.html'))
+        .catch(async () => (await caches.match(request)) || caches.match('./index.html'))
     );
     return;
   }
