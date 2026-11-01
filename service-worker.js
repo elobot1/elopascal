@@ -1,4 +1,4 @@
-const CACHE_NAME = 'elopascal-app-v16';
+const CACHE_NAME = 'elopascal-app-v17';
 const APP_SHELL = [
   './index.html',
   './elopascal.webmanifest',
