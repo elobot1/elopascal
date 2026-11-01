@@ -5704,6 +5704,185 @@
       color: #f4f6fa;
     }
 
+    @media (max-width: 700px) {
+      .relative.z-10.flex.flex-col.min-h-screen {
+        padding: 8px;
+        gap: 10px;
+      }
+
+      header {
+        gap: 8px;
+        padding: 9px;
+      }
+
+      main.flex-1.grid,
+      #editorDropZone,
+      #panelsColumn,
+      #crtPanelContainer,
+      #manualPanelContainer {
+        min-width: 0;
+      }
+
+      #editorDropZone {
+        min-height: clamp(400px, calc(100vh - 360px), 480px);
+      }
+
+      .editor-wrapper {
+        min-height: 300px;
+      }
+
+      .editor-execution-bar {
+        gap: 8px;
+      }
+
+      .execution-actions {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: 100%;
+        gap: 8px !important;
+      }
+
+      #btnRun,
+      #btnStepMode,
+      #btnStop {
+        width: 100%;
+        min-width: 0;
+        min-height: 44px !important;
+        justify-content: center;
+        gap: .35rem;
+        padding-right: .45rem;
+        padding-left: .45rem;
+        font-size: .75rem;
+      }
+
+      #btnStepMode {
+        flex: initial;
+      }
+
+      .speed-control {
+        flex: 1 1 100%;
+        width: 100%;
+        min-width: 0;
+      }
+
+      .speed-picker {
+        min-width: 0;
+      }
+
+      .manual-panel-toolbar {
+        gap: .45rem;
+        padding: 9px !important;
+      }
+
+      .manual-panel-heading {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .manual-panel-heading > :first-child {
+        min-width: 0;
+      }
+
+      #tabBtnManualTrace {
+        min-width: 0;
+        flex: 1 1 0;
+        gap: .35rem;
+        padding-right: .4rem;
+        padding-left: .4rem;
+        font-size: .65rem;
+      }
+
+      #tabBtnManualTrace span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      #tabBtnVarWatch {
+        flex: 0 0 auto;
+        gap: .3rem;
+        padding-right: .4rem;
+        padding-left: .4rem;
+        font-size: .65rem;
+      }
+
+      .manual-panel-actions {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 6px;
+        width: 100%;
+      }
+
+      .manual-panel-actions > button {
+        min-width: 0;
+        min-height: 38px;
+        justify-content: center;
+        gap: .25rem;
+        padding: .35rem .25rem !important;
+        font-size: .65rem !important;
+        white-space: nowrap;
+      }
+
+      #manualPanelContainer > .manual-panel-toolbar > .manual-panel-actions {
+        justify-content: stretch;
+      }
+
+      #manualPanelContainer > .manual-panel-toolbar > .manual-panel-actions > button {
+        flex: initial;
+      }
+
+      #manualTraceBody td,
+      #manualTraceHead th {
+        padding-right: .45rem;
+        padding-left: .45rem;
+      }
+
+      #editorDropZone > .border-t {
+        padding: 8px 10px;
+        gap: 6px;
+      }
+
+      #editorDropZone > .border-t > div {
+        min-width: 0;
+        gap: 6px;
+        font-size: .62rem;
+      }
+
+      #editorDropZone > .border-t > div:last-child {
+        flex: 1 1 100%;
+        justify-content: space-between;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .execution-actions {
+        gap: 7px !important;
+      }
+
+      #btnStepMode kbd {
+        display: none;
+      }
+
+      .manual-panel-actions {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      #editorDropZone > .border-b:first-child {
+        grid-template-columns: auto minmax(0, 1fr);
+      }
+
+      #editorDropZone > .border-t > div:last-child > .text-slate-500 {
+        display: none;
+      }
+
+      #fileTabsContainer {
+        min-width: 0;
+        overflow-x: auto;
+      }
+    }
+
   </style>
 </head>
 <body class="selection:bg-sky-500/30 selection:text-sky-200">
