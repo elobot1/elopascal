@@ -1980,6 +1980,66 @@
       min-width: 0;
     }
 
+    .custom-speed-editor {
+      position: fixed;
+      z-index: 1001;
+      display: flex;
+      width: min(20rem, calc(100vw - 1.5rem));
+      min-width: 0;
+      align-items: center;
+      gap: .5rem;
+      padding: .65rem;
+      border: 1px solid rgba(16,24,32,.14);
+      border-radius: .8rem;
+      background: #fff;
+      box-shadow: 0 12px 30px rgba(16,24,32,.18);
+      color: #26332e;
+      flex-wrap: wrap;
+    }
+
+    .custom-speed-editor input {
+      width: 5.5rem;
+      padding: .35rem .45rem;
+      border: 1px solid rgba(16,24,32,.2);
+      border-radius: .5rem;
+      background: #fff;
+      color: #17211d;
+      font: inherit;
+    }
+
+    .custom-speed-editor button {
+      padding: .4rem .65rem;
+      border-radius: .5rem;
+      background: var(--accent);
+      color: #171328;
+      font-size: .75rem;
+      font-weight: 700;
+    }
+
+    .custom-speed-error {
+      position: absolute;
+      top: calc(100% + .45rem);
+      left: 0;
+      right: auto;
+      z-index: 1002;
+      display: flex;
+      width: min(22rem, calc(100vw - 1.5rem));
+      align-items: flex-start;
+      gap: .55rem;
+      padding: .65rem .75rem;
+      border: 1px solid rgba(220,38,38,.22);
+      border-radius: .75rem;
+      background: #fff7f6;
+      box-shadow: 0 10px 24px rgba(127,29,29,.14);
+      color: #991b1b;
+      font-size: .75rem;
+      line-height: 1.4;
+    }
+
+    .custom-speed-error[hidden] {
+      display: none;
+    }
+
     .speed-native-select {
       position: absolute;
       width: 1px;
@@ -2492,6 +2552,24 @@
       background: rgba(19,28,39,.98);
       box-shadow: 0 20px 52px rgba(0,0,0,.48), 0 3px 14px rgba(0,0,0,.2), inset 0 1px 0 rgba(255,255,255,.07);
       color: #e8edf4;
+    }
+
+    html[data-color-mode="dark"] .custom-speed-editor {
+      border-color: rgba(220,230,242,.16);
+      background: #17212d;
+      color: #e8edf4;
+    }
+
+    html[data-color-mode="dark"] .custom-speed-editor input {
+      border-color: rgba(220,230,242,.2);
+      background: #0b1119;
+      color: #f0f4f9;
+    }
+
+    html[data-color-mode="dark"] .custom-speed-error {
+      border-color: rgba(248,113,113,.28);
+      background: #321b20;
+      color: #fecaca;
     }
 
     html[data-color-mode="dark"] .speed-option {
@@ -5438,6 +5516,194 @@
       }
     }
 
+    :root {
+      --accent-hover: #bea8fa;
+    }
+
+    .ambient-bg {
+      background:
+        radial-gradient(ellipse at 10% 12%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 34%),
+        radial-gradient(ellipse at 92% 18%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 36%),
+        radial-gradient(ellipse at 48% 100%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 42%),
+        linear-gradient(145deg, #f8faf6 0%, #eff3ee 50%, #f6f5fb 100%);
+    }
+
+    html[data-color-mode="light"] .ambient-bg {
+      background:
+        radial-gradient(ellipse at 10% 12%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 34%),
+        radial-gradient(ellipse at 92% 18%, color-mix(in srgb, var(--accent) 9%, transparent), transparent 28%),
+        linear-gradient(155deg, #f3f5fa 0%, #e9edf4 54%, color-mix(in srgb, var(--accent) 6%, #f5f4fa) 100%);
+    }
+
+    html[data-color-mode="dark"] .ambient-bg {
+      background:
+        radial-gradient(ellipse at 10% 12%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 34%),
+        radial-gradient(ellipse at 92% 18%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 36%),
+        radial-gradient(ellipse at 48% 100%, color-mix(in srgb, var(--accent) 7%, transparent), transparent 42%),
+        linear-gradient(145deg, #090e14 0%, #111923 52%, color-mix(in srgb, var(--accent) 7%, #100e18) 100%);
+    }
+
+    #orb1,
+    #orb2,
+    #orb3 {
+      background-color: color-mix(in srgb, var(--accent) 24%, transparent) !important;
+    }
+
+    #btnRun,
+    #btnStepMode {
+      border-color: color-mix(in srgb, var(--accent) 72%, #293549) !important;
+      background: linear-gradient(135deg, var(--accent-hover), var(--accent)) !important;
+      color: #171328 !important;
+      box-shadow: 0 4px 0 color-mix(in srgb, var(--accent) 48%, #283044), 0 8px 20px var(--accent-soft) !important;
+    }
+
+    #btnRun:hover,
+    #btnStepMode:hover {
+      border-color: var(--accent) !important;
+      background: linear-gradient(135deg, color-mix(in srgb, var(--accent-hover) 84%, white), var(--accent)) !important;
+      box-shadow: 0 5px 0 color-mix(in srgb, var(--accent) 50%, #283044), 0 10px 24px var(--accent-soft) !important;
+    }
+
+    #btnRun:active,
+    #btnStepMode:active,
+    #btnRun.is-loading {
+      box-shadow: 0 1px 0 color-mix(in srgb, var(--accent) 44%, #283044), 0 3px 10px var(--accent-soft) !important;
+    }
+
+    html[data-color-mode="dark"] #btnRun,
+    html[data-color-mode="dark"] #btnRun:hover,
+    html[data-color-mode="dark"] #btnStepMode,
+    html[data-color-mode="dark"] #btnStepMode:hover,
+    html[data-color-mode="dark"] button#btnRun,
+    html[data-color-mode="dark"] button#btnRun:hover,
+    html[data-color-mode="dark"] button#btnRun:focus-visible,
+    html[data-color-mode="light"] #btnRun,
+    html[data-color-mode="light"] #btnRun:hover,
+    html[data-color-mode="light"] #btnStepMode,
+    html[data-color-mode="light"] #btnStepMode:hover {
+      border-color: color-mix(in srgb, var(--accent) 72%, #293549) !important;
+      background: linear-gradient(135deg, var(--accent-hover), var(--accent)) !important;
+      color: #171328 !important;
+      box-shadow: 0 4px 0 color-mix(in srgb, var(--accent) 48%, #283044), 0 8px 20px var(--accent-soft) !important;
+    }
+
+    html[data-color-mode="dark"] #btnRun:hover,
+    html[data-color-mode="dark"] #btnStepMode:hover,
+    html[data-color-mode="dark"] button#btnRun:hover,
+    html[data-color-mode="dark"] button#btnRun:focus-visible,
+    html[data-color-mode="light"] #btnRun:hover,
+    html[data-color-mode="light"] #btnStepMode:hover {
+      background: linear-gradient(135deg, color-mix(in srgb, var(--accent-hover) 84%, white), var(--accent)) !important;
+      box-shadow: 0 5px 0 color-mix(in srgb, var(--accent) 50%, #283044), 0 10px 24px var(--accent-soft) !important;
+    }
+
+    #btnStepMode {
+      min-width: 10rem;
+      justify-content: center;
+      font-weight: 850;
+    }
+
+    #btnStepMode svg {
+      background: color-mix(in srgb, var(--accent) 22%, white) !important;
+      color: color-mix(in srgb, var(--accent) 76%, #44376b) !important;
+    }
+
+    #btnStepMode kbd {
+      padding: 3px 5px;
+      border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+      border-radius: 5px;
+      background: color-mix(in srgb, var(--accent) 18%, white);
+      color: #171328;
+      font-size: .56rem;
+      font-weight: 750;
+      white-space: nowrap;
+    }
+
+    #customSpeedInput[aria-invalid="true"] {
+      border-color: #dc2626;
+      box-shadow: 0 0 0 2px rgba(220,38,38,.14);
+    }
+
+    #editorMenuToggle {
+      border-color: color-mix(in srgb, var(--accent) 30%, transparent);
+      background: color-mix(in srgb, var(--accent) 12%, transparent);
+    }
+
+    #editorMenuToggle:hover,
+    #editorMenuToggle[aria-expanded="true"] {
+      border-color: color-mix(in srgb, var(--accent) 58%, transparent);
+      background: color-mix(in srgb, var(--accent) 20%, transparent);
+    }
+
+    .theme-dot.theme-swatch[aria-pressed="true"] {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    .toolbar-quick-access.has-shortcuts {
+      scrollbar-color: color-mix(in srgb, var(--accent) 40%, transparent) transparent;
+    }
+
+    #brandThemeMenu {
+      border-color: color-mix(in srgb, var(--accent) 38%, transparent);
+    }
+
+    #fileTabsContainer > button[class*="bg-white/15"],
+    #tabBtnConsole[class*="bg-white/15"],
+    #tabBtnManualTrace[class*="bg-white/15"],
+    #tabBtnVarWatch[class*="bg-white/15"] {
+      border-color: color-mix(in srgb, var(--accent) 42%, transparent) !important;
+      background: color-mix(in srgb, var(--accent) 18%, white) !important;
+      color: #171328 !important;
+    }
+
+    html[data-color-mode="dark"] #fileTabsContainer > button[class*="bg-white/15"],
+    html[data-color-mode="dark"] #tabBtnConsole[class*="bg-white/15"],
+    html[data-color-mode="dark"] #tabBtnManualTrace[class*="bg-white/15"],
+    html[data-color-mode="dark"] #tabBtnVarWatch[class*="bg-white/15"] {
+      background: color-mix(in srgb, var(--accent) 25%, #17212d) !important;
+      color: #171328 !important;
+    }
+
+    html[data-color-mode="light"] #fileTabsContainer > button[class*="bg-white/15"],
+    html[data-color-mode="light"] #tabBtnConsole[class*="bg-white/15"],
+    html[data-color-mode="light"] #tabBtnManualTrace[class*="bg-white/15"],
+    html[data-color-mode="light"] #tabBtnVarWatch[class*="bg-white/15"] {
+      color: #171328 !important;
+    }
+
+    #editorMenuToggle:focus-visible,
+    #toolbarShortcutOptions input:focus-visible,
+    .workspace-tool-toggle:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    ::selection {
+      background: var(--accent-soft);
+    }
+
+    #brandThemeToggle:focus-visible,
+    #btnRun:focus-visible,
+    #btnStepMode:focus-visible,
+    #execSpeedTrigger:focus-visible {
+      outline-color: var(--accent) !important;
+    }
+
+    html[data-color-mode="dark"] #btnStepMode,
+    html[data-color-mode="dark"] #btnStepMode:hover {
+      color: #171328 !important;
+    }
+
+    html[data-color-mode="dark"] #btnStepMode svg {
+      color: color-mix(in srgb, var(--accent) 76%, #44376b) !important;
+    }
+
+    html[data-color-mode="dark"] #btnStepMode kbd {
+      background: color-mix(in srgb, var(--accent) 25%, #17212d);
+      color: #f4f6fa;
+    }
+
   </style>
 </head>
 <body class="selection:bg-sky-500/30 selection:text-sky-200">
@@ -5584,9 +5850,10 @@
               <kbd class="hidden md:inline-block text-[10px] px-1.5 py-0.5 rounded bg-black/25 text-black/80 font-mono-code">Ctrl+Enter</kbd>
             </button>
 
-            <button id="btnStepMode" class="liquid-pill px-3.5 py-2 rounded-xl text-xs sm:text-sm text-slate-200 flex items-center gap-1.5" title="Step-by-step interactive debugger">
+            <button id="btnStepMode" class="liquid-pill px-3.5 py-2 rounded-xl text-xs sm:text-sm text-slate-200 flex items-center gap-1.5" title="Step-by-step debugger (Shift+Tab in the code editor)">
               <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 5l7 7-7 7M5 5l7 7-7 7"/></svg>
               <span id="stepBtnLabel">Debug Step</span>
+              <kbd class="inline-block text-[10px] px-1.5 py-0.5 rounded font-mono-code">Shift+Tab</kbd>
             </button>
 
             <button id="btnStop" class="liquid-pill px-3 py-2 rounded-xl text-xs sm:text-sm text-rose-300 hover:text-rose-200 hidden items-center gap-1.5">
@@ -5610,6 +5877,13 @@
                 <span id="execSpeedCurrent">Instant (Turbo)</span>
                 <svg class="speed-chevron" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m6 9 6 6 6-6"/></svg>
               </button>
+              <form id="customSpeedForm" class="custom-speed-editor hidden" novalidate>
+                <label for="customSpeedInput">Delay per line</label>
+                <input id="customSpeedInput" type="number" min="0" max="2000" step="1" value="250" aria-label="Custom delay in milliseconds" aria-describedby="customSpeedError" />
+                <span>ms</span>
+                <button type="submit">Apply</button>
+                <p id="customSpeedError" class="custom-speed-error" role="alert" aria-live="polite" hidden></p>
+              </form>
               <div id="execSpeedOptions" popover="manual" role="listbox" aria-labelledby="execSpeedLabel">
                 <button class="speed-option" type="button" role="option" data-speed="0" aria-selected="true">
                   <span class="speed-option-indicator" aria-hidden="true"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 20 20"><path stroke-linecap="round" stroke-linejoin="round" d="M3.3 13.8a7 7 0 1113.4 0M10 10l3.2-3.1M6.5 14h7"/></svg></span>
@@ -5639,6 +5913,11 @@
                 <button class="speed-option" type="button" role="option" data-speed="1000" aria-selected="false">
                   <span class="speed-option-indicator" aria-hidden="true"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 20 20"><path stroke-linecap="round" stroke-linejoin="round" d="M3.3 13.8a7 7 0 1113.4 0M10 10l3.2-3.1M6.5 14h7"/></svg></span>
                   <span class="speed-option-copy"><span class="speed-option-title">Deep Trace PRO MAX</span><span class="speed-option-detail">1,000 ms per line · maximum visibility</span></span>
+                  <svg class="speed-option-check" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 20 20" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m4 10 4 4 8-8"/></svg>
+                </button>
+                <button class="speed-option" type="button" role="option" data-speed="custom" data-action="custom" aria-selected="false">
+                  <span class="speed-option-indicator" aria-hidden="true"><svg fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 20 20"><path stroke-linecap="round" stroke-linejoin="round" d="M10 3v14M3 10h14"/></svg></span>
+                  <span class="speed-option-copy"><span class="speed-option-title">Custom speed</span><span class="speed-option-detail">Enter your own delay (0–2,000 ms per line)</span></span>
                   <svg class="speed-option-check" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 20 20" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m4 10 4 4 8-8"/></svg>
                 </button>
               </div>
@@ -8001,6 +8280,10 @@
     codeInput.addEventListener('keydown', (e) => {
       if (e.key === 'Tab') {
         e.preventDefault();
+        if (e.shiftKey) {
+          document.getElementById('btnStepMode').click();
+          return;
+        }
         const start = codeInput.selectionStart;
         const end = codeInput.selectionEnd;
         codeInput.value = codeInput.value.substring(0, start) + '  ' + codeInput.value.substring(end);
@@ -8624,7 +8907,10 @@
           onStep: async (line, varsSnapshot) => {
             lastExecutedLine = line;
             recordManualTraceStep(line, varsSnapshot);
-            const speed = parseInt(document.getElementById('execSpeed').value, 10);
+            const selectedSpeed = document.getElementById('execSpeed').selectedOptions[0];
+            const speed = selectedSpeed.dataset.custom === 'true'
+              ? Number(selectedSpeed.dataset.speedMs)
+              : parseInt(selectedSpeed.value, 10);
             if (stepModeActive) {
               activeHighlightedLine = line;
               execLineIndicator.textContent = `Paused at Line ${line}`;
@@ -8972,6 +9258,7 @@
 
       const root = document.documentElement;
       root.style.setProperty('--accent', theme.accent);
+      root.style.setProperty('--accent-hover', theme.hover);
       root.style.setProperty('--accent-2', theme.accent);
       root.style.setProperty('--accent-glow', theme.glow);
       root.style.setProperty('--accent-soft', theme.soft);
@@ -8983,6 +9270,7 @@
         const selected = dot.dataset.theme === key;
         dot.setAttribute('aria-pressed', String(selected));
       });
+      document.querySelector('meta[name="theme-color"]').content = theme.accent;
 
       if (persist) {
         try {
@@ -9038,12 +9326,32 @@
     const executionSpeedCurrent = document.getElementById('execSpeedCurrent');
     const executionSpeedOptions = document.getElementById('execSpeedOptions');
     const speedOptionButtons = Array.from(executionSpeedOptions.querySelectorAll('[role="option"]'));
+    const customSpeedForm = document.getElementById('customSpeedForm');
+    const customSpeedInput = document.getElementById('customSpeedInput');
+    const customSpeedError = document.getElementById('customSpeedError');
+
+    function positionCustomSpeedForm() {
+      if (customSpeedForm.classList.contains('hidden')) return;
+      const triggerRect = executionSpeedTrigger.getBoundingClientRect();
+      const formRect = customSpeedForm.getBoundingClientRect();
+      const errorRect = customSpeedError.hidden ? null : customSpeedError.getBoundingClientRect();
+      const contentWidth = Math.max(formRect.width, errorRect ? errorRect.width : 0);
+      const left = Math.max(12, Math.min(triggerRect.left, window.innerWidth - contentWidth - 12));
+      const below = triggerRect.bottom + 8;
+      const errorHeight = errorRect ? errorRect.height + 8 : 0;
+      const top = below + formRect.height + errorHeight <= window.innerHeight - 12
+        ? below
+        : Math.max(12, triggerRect.top - formRect.height - errorHeight - 8);
+      customSpeedForm.style.left = `${left}px`;
+      customSpeedForm.style.top = `${top}px`;
+    }
 
     function syncExecutionSpeedPicker() {
       const selectedOption = executionSpeedSelect.selectedOptions[0];
       executionSpeedCurrent.textContent = selectedOption.textContent;
       speedOptionButtons.forEach(option => {
-        option.setAttribute('aria-selected', String(option.dataset.speed === executionSpeedSelect.value));
+        const isCustomSelected = option.dataset.action === 'custom' && selectedOption.dataset.custom === 'true';
+        option.setAttribute('aria-selected', String(option.dataset.speed === executionSpeedSelect.value || isCustomSelected));
       });
     }
 
@@ -9069,7 +9377,7 @@
         : Math.max(12, triggerRect.top - menuRect.height - 8);
       executionSpeedOptions.style.left = `${left}px`;
       executionSpeedOptions.style.top = `${top}px`;
-      speedOptionButtons.find(option => option.dataset.speed === executionSpeedSelect.value)?.focus();
+      speedOptionButtons.find(option => option.getAttribute('aria-selected') === 'true')?.focus();
     }
 
     executionSpeedTrigger.addEventListener('click', () => {
@@ -9094,8 +9402,24 @@
 
     speedOptionButtons.forEach((option, index) => {
       option.addEventListener('click', () => {
+        if (option.dataset.action === 'custom') {
+          closeExecutionSpeedPicker();
+          customSpeedInput.value = executionSpeedSelect.selectedOptions[0].dataset.custom === 'true'
+            ? executionSpeedSelect.selectedOptions[0].dataset.speedMs
+            : customSpeedInput.value;
+          customSpeedError.hidden = true;
+          customSpeedInput.removeAttribute('aria-invalid');
+          customSpeedForm.classList.remove('hidden');
+          positionCustomSpeedForm();
+          customSpeedInput.focus();
+          customSpeedInput.select();
+          return;
+        }
+
         executionSpeedSelect.value = option.dataset.speed;
         executionSpeedSelect.dispatchEvent(new Event('change', { bubbles: true }));
+        customSpeedForm.classList.add('hidden');
+        customSpeedError.hidden = true;
         syncExecutionSpeedPicker();
         closeExecutionSpeedPicker(true);
       });
@@ -9121,6 +9445,51 @@
         speedOptionButtons[nextIndex].focus();
       });
     });
+
+    customSpeedForm.addEventListener('submit', event => {
+      event.preventDefault();
+      const rawSpeed = customSpeedInput.value.trim();
+      const speed = Number(rawSpeed);
+      if (!rawSpeed || !Number.isInteger(speed) || speed < 0 || speed > 2000) {
+        customSpeedError.textContent = rawSpeed
+          ? 'Choose a whole number from 0 to 2,000 ms per line.'
+          : 'Enter a delay from 0 to 2,000 ms per line.';
+        customSpeedError.hidden = false;
+        customSpeedInput.setAttribute('aria-invalid', 'true');
+        positionCustomSpeedForm();
+        return;
+      }
+
+      customSpeedError.hidden = true;
+      customSpeedInput.removeAttribute('aria-invalid');
+      let customOption = executionSpeedSelect.querySelector('option[data-custom="true"]');
+      if (!customOption) {
+        customOption = document.createElement('option');
+        customOption.dataset.custom = 'true';
+        executionSpeedSelect.appendChild(customOption);
+      }
+      customOption.value = 'custom';
+      customOption.dataset.speedMs = String(speed);
+      customOption.textContent = `Custom (${speed} ms)`;
+      executionSpeedSelect.value = 'custom';
+      syncExecutionSpeedPicker();
+      customSpeedForm.classList.add('hidden');
+    });
+
+    customSpeedInput.addEventListener('input', () => {
+      customSpeedError.hidden = true;
+      customSpeedInput.removeAttribute('aria-invalid');
+    });
+
+    customSpeedInput.addEventListener('keydown', event => {
+      if (event.key !== 'Escape') return;
+      customSpeedForm.classList.add('hidden');
+      customSpeedError.hidden = true;
+      executionSpeedTrigger.focus();
+    });
+
+    window.addEventListener('resize', positionCustomSpeedForm);
+    window.addEventListener('scroll', positionCustomSpeedForm, true);
 
     executionSpeedOptions.addEventListener('toggle', event => {
       const isOpen = event.newState === 'open';
