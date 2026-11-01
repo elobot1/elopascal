@@ -5883,6 +5883,677 @@
       }
     }
 
+    #btnInstallApp,
+    #themeModeToggle {
+      border: 1.5px solid color-mix(in srgb, var(--accent) 72%, #293549) !important;
+      background: linear-gradient(135deg, var(--bot-lavender-hover), var(--bot-lavender)) !important;
+      color: #171328 !important;
+      box-shadow: 0 4px 0 color-mix(in srgb, var(--accent) 50%, #283044), 0 8px 18px var(--accent-soft) !important;
+      font-weight: 800;
+      transition: background 160ms ease, border-color 160ms ease, box-shadow 160ms ease, transform 120ms ease;
+    }
+
+    #btnInstallApp {
+      min-height: 44px;
+      padding: .5rem .85rem;
+      border-radius: .8rem;
+    }
+
+    #btnInstallApp:hover,
+    #themeModeToggle:hover {
+      border-color: var(--accent) !important;
+      background: linear-gradient(135deg, color-mix(in srgb, var(--bot-lavender-hover) 84%, white), var(--bot-lavender)) !important;
+      box-shadow: 0 5px 0 color-mix(in srgb, var(--accent) 50%, #283044), 0 10px 22px var(--accent-soft) !important;
+      transform: translateY(-1px);
+    }
+
+    #btnInstallApp:active,
+    #themeModeToggle:active {
+      box-shadow: 0 1px 0 color-mix(in srgb, var(--accent) 50%, #283044), 0 3px 8px var(--accent-soft) !important;
+      transform: translateY(3px);
+    }
+
+    html[data-color-mode="dark"] #btnInstallApp,
+    html[data-color-mode="dark"] #themeModeToggle {
+      border-color: color-mix(in srgb, var(--accent) 72%, #293549) !important;
+      background: linear-gradient(135deg, var(--bot-lavender-hover), var(--bot-lavender)) !important;
+      color: #171328 !important;
+      box-shadow: 0 4px 0 color-mix(in srgb, var(--accent) 50%, #283044), 0 8px 18px var(--accent-soft) !important;
+    }
+
+    html[data-color-mode="dark"] #btnInstallApp:hover,
+    html[data-color-mode="dark"] #themeModeToggle:hover {
+      border-color: var(--accent) !important;
+      background: linear-gradient(135deg, color-mix(in srgb, var(--bot-lavender-hover) 84%, white), var(--bot-lavender)) !important;
+      color: #171328 !important;
+      box-shadow: 0 5px 0 color-mix(in srgb, var(--accent) 50%, #283044), 0 10px 24px var(--accent-soft) !important;
+    }
+
+    html[data-color-mode="dark"] #btnInstallApp:active,
+    html[data-color-mode="dark"] #themeModeToggle:active {
+      box-shadow: 0 1px 0 color-mix(in srgb, var(--accent) 50%, #283044), 0 3px 8px var(--accent-soft) !important;
+    }
+
+    header {
+      position: sticky;
+      top: max(8px, env(safe-area-inset-top));
+      z-index: 50;
+    }
+
+    #themeModeToggle .mode-icon,
+    html[data-color-mode="dark"] #themeModeToggle .mode-icon {
+      border-color: rgba(23,19,40,.2) !important;
+      background: rgba(255,255,255,.76) !important;
+      color: #171328 !important;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.9);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      width: calc(100% + 2 * clamp(14px, 2.2vw, 32px));
+      min-height: 88px;
+      margin-left: calc(-1 * clamp(14px, 2.2vw, 32px));
+      padding: 12px clamp(18px, 5vw, 72px);
+      border: 0;
+      border-bottom: 2px solid #67b9ee;
+      border-radius: 0;
+      background: linear-gradient(110deg, #f8fcfd 0%, #eaf7fb 52%, #dff3fa 100%);
+      box-shadow: 0 5px 18px rgba(37,103,145,.14);
+      -webkit-backdrop-filter: blur(18px) saturate(135%);
+      backdrop-filter: blur(18px) saturate(135%);
+    }
+
+    header::after {
+      display: none;
+    }
+
+    header h1,
+    header h1.text-white {
+      color: #101820 !important;
+    }
+
+    header h1 span {
+      background: none;
+      color: var(--accent) !important;
+      -webkit-text-fill-color: currentColor;
+    }
+
+    header .header-subtitle {
+      color: #5f7380 !important;
+    }
+
+    .header-actions {
+      gap: 0;
+      padding: 4px;
+      border: 2px solid #173047;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #83d6f4, #42bfe9);
+      box-shadow: 0 4px 0 #173047, 0 8px 18px rgba(34,126,171,.18);
+    }
+
+    #btnInstallApp,
+    #themeModeToggle {
+      border-color: #173047 !important;
+      background: linear-gradient(135deg, #a5e8fb, #50c8ed) !important;
+      color: #102638 !important;
+      box-shadow: 0 2px 0 rgba(16,38,56,.55), inset 0 1px 0 rgba(255,255,255,.75) !important;
+    }
+
+    #btnInstallApp {
+      min-height: 42px;
+      border-radius: 999px;
+    }
+
+    #themeModeToggle {
+      width: 44px;
+      min-width: 44px;
+      max-width: 44px;
+      height: 44px;
+      min-height: 44px;
+      flex-basis: 44px;
+      border-radius: 50%;
+    }
+
+    #btnInstallApp:hover,
+    #themeModeToggle:hover {
+      border-color: #102638 !important;
+      background: linear-gradient(135deg, #c0f1ff, #69d6f4) !important;
+      box-shadow: 0 3px 0 rgba(16,38,56,.6), 0 0 14px rgba(255,255,255,.42) !important;
+    }
+
+    #btnInstallApp:active,
+    #themeModeToggle:active {
+      box-shadow: 0 0 0 rgba(16,38,56,.5), inset 0 1px 2px rgba(16,38,56,.14) !important;
+    }
+
+    #themeModeToggle .mode-icon,
+    html[data-color-mode="dark"] #themeModeToggle .mode-icon {
+      width: 30px;
+      height: 30px;
+      border-color: rgba(16,38,56,.22) !important;
+      background: rgba(255,255,255,.48) !important;
+      color: #102638 !important;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.8);
+    }
+
+    html[data-color-mode="dark"] header {
+      border-bottom-color: #67b9ee;
+      background: linear-gradient(110deg, #f8fcfd 0%, #eaf7fb 52%, #dff3fa 100%);
+      box-shadow: 0 5px 18px rgba(37,103,145,.14);
+    }
+
+    html[data-color-mode="dark"] header h1,
+    html[data-color-mode="dark"] header h1.text-white {
+      color: #101820 !important;
+    }
+
+    html[data-color-mode="dark"] header .header-subtitle {
+      color: #5f7380 !important;
+    }
+
+    html[data-color-mode="dark"] .header-actions {
+      border-color: #173047;
+      background: linear-gradient(135deg, #83d6f4, #42bfe9);
+      box-shadow: 0 4px 0 #173047, 0 8px 18px rgba(34,126,171,.18);
+    }
+
+    html[data-color-mode="dark"] #btnInstallApp,
+    html[data-color-mode="dark"] #themeModeToggle {
+      border-color: #173047 !important;
+      background: linear-gradient(135deg, #a5e8fb, #50c8ed) !important;
+      color: #102638 !important;
+      box-shadow: 0 2px 0 rgba(16,38,56,.55), inset 0 1px 0 rgba(255,255,255,.75) !important;
+    }
+
+    html[data-color-mode="light"] header {
+      border: 0;
+      border-bottom: 2px solid #67b9ee;
+      border-radius: 0;
+      background: linear-gradient(110deg, #f8fcfd 0%, #eaf7fb 52%, #dff3fa 100%);
+      box-shadow: 0 5px 18px rgba(37,103,145,.14);
+    }
+
+    html[data-color-mode="light"] header h1,
+    html[data-color-mode="light"] header h1.text-white {
+      color: #101820 !important;
+    }
+
+    html[data-color-mode="light"] header h1 span {
+      background: none;
+      color: var(--accent) !important;
+      -webkit-text-fill-color: currentColor;
+    }
+
+    html[data-color-mode="light"] header .header-subtitle {
+      color: #5f7380 !important;
+    }
+
+    html[data-color-mode="light"] .header-actions {
+      border-color: #173047;
+      background: linear-gradient(135deg, #83d6f4, #42bfe9);
+      box-shadow: 0 4px 0 #173047, 0 8px 18px rgba(34,126,171,.18);
+    }
+
+    html[data-color-mode="light"] #btnInstallApp,
+    html[data-color-mode="light"] #themeModeToggle {
+      border-color: #173047 !important;
+      background: linear-gradient(135deg, #a5e8fb, #50c8ed) !important;
+      color: #102638 !important;
+      box-shadow: 0 2px 0 rgba(16,38,56,.55), inset 0 1px 0 rgba(255,255,255,.75) !important;
+    }
+
+    html[data-color-mode="light"] #btnInstallApp:hover,
+    html[data-color-mode="light"] #themeModeToggle:hover {
+      border-color: #102638 !important;
+      background: linear-gradient(135deg, #c0f1ff, #69d6f4) !important;
+      box-shadow: 0 3px 0 rgba(16,38,56,.6), 0 0 14px rgba(255,255,255,.42) !important;
+    }
+
+    html[data-color-mode="light"] #themeModeToggle .mode-icon {
+      border-color: rgba(16,38,56,.22) !important;
+      background: rgba(255,255,255,.48) !important;
+      color: #102638 !important;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        min-height: 72px;
+        width: calc(100% + 16px);
+        margin-left: -8px;
+        padding: 8px 12px;
+      }
+
+      .header-brand {
+        gap: 8px !important;
+      }
+
+      .header-actions {
+        gap: 3px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      header {
+        padding-right: 8px;
+        padding-left: 8px;
+      }
+
+      #btnInstallApp {
+        min-width: 42px;
+        padding-right: .55rem;
+        padding-left: .55rem;
+      }
+    }
+
+    .relative.z-10.flex.flex-col.min-h-screen {
+      padding: 0 12px 12px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      width: calc(100% + 24px);
+      min-height: 0;
+      margin-left: -12px;
+      margin-bottom: -18px;
+      padding: 8px 18px;
+      border: 0;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+      border-radius: 0;
+      box-shadow: none;
+    }
+
+    header::after {
+      display: none;
+    }
+
+    html[data-color-mode="dark"] header {
+      background: linear-gradient(125deg, rgba(20,30,42,.98), rgba(15,23,34,.98));
+      border-bottom-color: rgba(255,255,255,.12);
+    }
+
+    html[data-color-mode="light"] header {
+      background: linear-gradient(110deg, #f8fcfd, #eaf7fb 52%, #dff3fa);
+      border-bottom-color: rgba(16,24,32,.14);
+    }
+
+    header h1,
+    header h1.text-white {
+      color: var(--bot-ink) !important;
+    }
+
+    header h1 span {
+      background: none;
+      color: var(--accent) !important;
+      -webkit-text-fill-color: var(--accent);
+    }
+
+    html[data-color-mode="dark"] header .header-subtitle {
+      color: #aab6c5 !important;
+    }
+
+    html[data-color-mode="light"] header .header-subtitle {
+      color: #5f7380 !important;
+    }
+
+    .header-actions {
+      gap: 6px;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    #btnInstallApp,
+    #themeModeToggle {
+      border: 1.5px solid var(--control-ink) !important;
+      background: linear-gradient(135deg, var(--bot-lavender-hover), var(--bot-lavender)) !important;
+      color: var(--control-ink) !important;
+      box-shadow: 0 2px 0 var(--control-ink), 0 4px 10px var(--accent-soft) !important;
+      font-weight: 800;
+    }
+
+    #btnInstallApp:hover,
+    #themeModeToggle:hover {
+      border-color: var(--control-ink) !important;
+      background: linear-gradient(135deg, color-mix(in srgb, var(--bot-lavender-hover) 84%, white), var(--bot-lavender)) !important;
+      box-shadow: 0 3px 0 var(--control-ink), 0 6px 14px var(--accent-soft) !important;
+      transform: translateY(-1px);
+    }
+
+    #btnInstallApp:active,
+    #themeModeToggle:active {
+      box-shadow: 0 0 0 var(--control-ink), inset 0 1px 2px rgba(16,24,32,.16) !important;
+      transform: translateY(2px);
+    }
+
+    html[data-color-mode="dark"] #btnInstallApp,
+    html[data-color-mode="dark"] #themeModeToggle,
+    html[data-color-mode="light"] #btnInstallApp,
+    html[data-color-mode="light"] #themeModeToggle {
+      border-color: var(--control-ink) !important;
+      background: linear-gradient(135deg, var(--bot-lavender-hover), var(--bot-lavender)) !important;
+      color: var(--control-ink) !important;
+      box-shadow: 0 2px 0 var(--control-ink), 0 4px 10px var(--accent-soft) !important;
+    }
+
+    #btnInstallApp {
+      min-height: 40px;
+      padding: .4rem .75rem;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    #themeModeToggle {
+      width: 40px;
+      min-width: 40px;
+      max-width: 40px;
+      height: 40px;
+      min-height: 40px;
+      flex-basis: 40px;
+      border-radius: 50%;
+    }
+
+    #themeModeToggle .mode-icon,
+    html[data-color-mode="dark"] #themeModeToggle .mode-icon,
+    html[data-color-mode="light"] #themeModeToggle .mode-icon {
+      width: 26px;
+      height: 26px;
+      border-color: rgba(16,24,32,.24) !important;
+      background: rgba(255,255,255,.48) !important;
+      color: var(--control-ink) !important;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.75);
+    }
+
+    @media (max-width: 700px) {
+      .relative.z-10.flex.flex-col.min-h-screen {
+        padding: 0 8px 8px;
+      }
+
+      header {
+        width: calc(100% + 16px);
+        margin-left: -8px;
+        margin-bottom: -10px;
+        padding: 6px 10px;
+      }
+
+      .header-brand {
+        gap: 8px !important;
+      }
+
+      .header-actions {
+        gap: 5px;
+      }
+
+      #btnInstallApp {
+        min-height: 38px;
+        padding: .35rem .6rem;
+      }
+
+      #themeModeToggle {
+        width: 38px;
+        min-width: 38px;
+        max-width: 38px;
+        height: 38px;
+        min-height: 38px;
+        flex-basis: 38px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .relative.z-10.flex.flex-col.min-h-screen {
+        padding-right: 6px;
+        padding-left: 6px;
+      }
+
+      header {
+        width: calc(100% + 12px);
+        margin-left: -6px;
+        margin-bottom: -10px;
+        padding-right: 7px;
+        padding-left: 7px;
+      }
+
+      #brandThemeToggle {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+
+      #btnInstallApp {
+        padding-right: .45rem;
+        padding-left: .45rem;
+        font-size: .7rem;
+      }
+
+      .header-actions {
+        gap: 4px;
+      }
+    }
+
+    html[data-color-mode="dark"] header.liquid-glass {
+      background: linear-gradient(125deg, rgba(20,30,42,.98), rgba(15,23,34,.98));
+      border-bottom-color: rgba(255,255,255,.12);
+      box-shadow: none;
+    }
+
+    html[data-color-mode="light"] header.liquid-glass {
+      background: linear-gradient(110deg, #f8fcfd, #eaf7fb 52%, #dff3fa);
+      border-bottom-color: rgba(16,24,32,.14);
+      box-shadow: none;
+    }
+
+    html[data-color-mode="dark"] header h1,
+    html[data-color-mode="dark"] header h1.text-white {
+      color: #e8edf4 !important;
+    }
+
+    html[data-color-mode="light"] header h1,
+    html[data-color-mode="light"] header h1.text-white {
+      color: #101820 !important;
+    }
+
+    html[data-color-mode="dark"] header h1 span,
+    html[data-color-mode="light"] header h1 span {
+      color: var(--accent) !important;
+      -webkit-text-fill-color: var(--accent);
+    }
+
+    html[data-color-mode="dark"] #btnInstallApp:hover,
+    html[data-color-mode="dark"] #themeModeToggle:hover,
+    html[data-color-mode="light"] #btnInstallApp:hover,
+    html[data-color-mode="light"] #themeModeToggle:hover {
+      border-color: var(--control-ink) !important;
+      background: linear-gradient(135deg, color-mix(in srgb, var(--bot-lavender-hover) 84%, white), var(--bot-lavender)) !important;
+      color: var(--control-ink) !important;
+      box-shadow: 0 3px 0 var(--control-ink), 0 6px 14px var(--accent-soft) !important;
+    }
+
+    #btnInstallApp,
+    #themeModeToggle,
+    html[data-color-mode="dark"] #btnInstallApp,
+    html[data-color-mode="dark"] #themeModeToggle,
+    html[data-color-mode="light"] #btnInstallApp,
+    html[data-color-mode="light"] #themeModeToggle {
+      border: 1px solid var(--control-ink) !important;
+      background: linear-gradient(135deg, var(--bot-lavender-hover), var(--bot-lavender)) !important;
+      color: var(--control-ink) !important;
+      box-shadow: 0 2px 0 var(--control-ink), 0 4px 10px var(--accent-soft) !important;
+      outline: none;
+    }
+
+    #btnInstallApp:hover,
+    #themeModeToggle:hover,
+    html[data-color-mode="dark"] #btnInstallApp:hover,
+    html[data-color-mode="dark"] #themeModeToggle:hover,
+    html[data-color-mode="light"] #btnInstallApp:hover,
+    html[data-color-mode="light"] #themeModeToggle:hover {
+      border-color: var(--control-ink) !important;
+      background: linear-gradient(135deg, var(--bot-lavender-hover), var(--bot-lavender)) !important;
+      color: var(--control-ink) !important;
+      box-shadow: 0 3px 0 var(--control-ink), 0 6px 14px var(--accent-soft) !important;
+      transform: translateY(-1px);
+    }
+
+    #btnInstallApp:active,
+    #themeModeToggle:active {
+      box-shadow: 0 0 0 var(--control-ink), inset 0 1px 2px rgba(16,24,32,.16) !important;
+      transform: translateY(2px);
+    }
+
+    #btnInstallApp:focus-visible,
+    #themeModeToggle:focus-visible {
+      outline: 2px solid var(--accent) !important;
+      outline-offset: 3px;
+    }
+
+    #btnInstallApp {
+      border-radius: 999px;
+    }
+
+    #themeModeToggle {
+      width: 40px;
+      min-width: 40px;
+      max-width: 40px;
+      height: 40px;
+      min-height: 40px;
+      flex: 0 0 40px;
+      padding: 0;
+      border-radius: 50%;
+    }
+
+    #themeModeToggle .mode-icon,
+    html[data-color-mode="dark"] #themeModeToggle .mode-icon,
+    html[data-color-mode="light"] #themeModeToggle .mode-icon {
+      width: 100%;
+      height: 100%;
+      border: 0 !important;
+      border-radius: inherit;
+      background: transparent !important;
+      color: var(--control-ink) !important;
+      box-shadow: none !important;
+    }
+
+    #themeModeLabel {
+      display: none !important;
+    }
+
+    html[data-color-mode="dark"] .header-actions,
+    html[data-color-mode="light"] .header-actions {
+      padding: 0 !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      background: transparent !important;
+      box-shadow: none !important;
+    }
+
+    .app-footer {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      width: calc(100% + 24px);
+      margin: 0 0 -12px -12px;
+      padding: 30px 18px 18px;
+      border-top: 3px solid var(--accent);
+      background:
+        radial-gradient(ellipse at 50% 0%, var(--accent-soft), transparent 62%),
+        linear-gradient(145deg, #10293a, #08131c 72%);
+      color: #e8edf4;
+      text-align: center;
+    }
+
+    .app-footer-brand {
+      margin: 0;
+      color: #f8fafc;
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.65rem;
+      font-weight: 800;
+      letter-spacing: -.06em;
+      line-height: 1;
+    }
+
+    .app-footer-brand span {
+      color: var(--accent);
+    }
+
+    .app-footer-tagline {
+      margin: 7px 0 0;
+      color: #aab6c5;
+      font-size: .82rem;
+    }
+
+    .app-footer-nav,
+    .app-footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 12px 26px;
+    }
+
+    .app-footer-nav a,
+    .app-footer-links a {
+      color: #c3ceda;
+      font-size: .84rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: color 160ms ease;
+    }
+
+    .app-footer-nav a:hover,
+    .app-footer-links a:hover {
+      color: var(--accent);
+    }
+
+    .app-footer-divider {
+      width: min(100%, 1120px);
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent-soft), transparent);
+    }
+
+    .app-footer-copyright {
+      margin: 0;
+      color: #8091a2;
+      font-size: .72rem;
+    }
+
+    @media (max-width: 700px) {
+      #themeModeToggle {
+        width: 38px;
+        min-width: 38px;
+        max-width: 38px;
+        height: 38px;
+        min-height: 38px;
+        flex-basis: 38px;
+      }
+
+      .app-footer {
+        width: calc(100% + 16px);
+        margin-left: -8px;
+        margin-bottom: -8px;
+        gap: 14px;
+        padding: 26px 14px 16px;
+      }
+
+      .app-footer-nav,
+      .app-footer-links {
+        gap: 12px 18px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .app-footer {
+        width: calc(100% + 12px);
+        margin-left: -6px;
+        margin-bottom: -8px;
+      }
+    }
+
   </style>
 </head>
 <body class="selection:bg-sky-500/30 selection:text-sky-200">
@@ -5899,7 +6570,7 @@
   <div class="relative z-10 flex flex-col min-h-screen max-w-[1600px] mx-auto p-3 sm:p-5 gap-4">
     
     <!-- Top Liquid Glass Navigation & Action Bar -->
-    <header class="liquid-glass rounded-2xl px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+    <header id="appHeader" class="liquid-glass rounded-2xl px-4 py-3 flex flex-wrap items-center justify-between gap-3">
       <!-- Brand: EloPascal -->
       <div class="header-brand flex items-center gap-3">
         <div class="brand-picker-wrap">
@@ -6260,6 +6931,25 @@
 
       </section>
     </main>
+
+    <footer class="app-footer">
+      <div>
+        <p class="app-footer-brand">Elo<span>Pascal</span></p>
+        <p class="app-footer-tagline">Code · Learn · Build</p>
+      </div>
+      <nav class="app-footer-nav" aria-label="App navigation">
+        <a href="#appHeader">Home</a>
+        <a href="#editorDropZone">Editor</a>
+        <a href="#crtPanelContainer">CRT Terminal</a>
+        <a href="#manualPanelContainer">Manual Processing</a>
+      </nav>
+      <div class="app-footer-links" aria-label="Project links">
+        <a href="https://github.com/elobot1/elopascal" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://github.com/elobot1/elopascal/blob/main/README.md" target="_blank" rel="noopener noreferrer">User Guide</a>
+      </div>
+      <div class="app-footer-divider" aria-hidden="true"></div>
+      <p class="app-footer-copyright">EloPascal · Learn Pascal by writing and running code</p>
+    </footer>
   </div>
 
   <!-- Modal: Build & Install Center (program.pas & program.exe) -->
