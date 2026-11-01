@@ -1,0 +1,26 @@
+{
+  "id": "./elopascal.html",
+  "name": "EloPascal",
+  "short_name": "EloPascal",
+  "description": "A Pascal editor, compiler, and interactive CRT terminal.",
+  "start_url": "./elopascal.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#090e14",
+  "theme_color": "#090e14",
+  "icons": [
+    {
+      "src": "./elo-app-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./elo-app-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
