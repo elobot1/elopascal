@@ -1623,6 +1623,15 @@
       color: #f0f4f9;
     }
 
+    html[data-color-mode="dark"] #interactiveReadForm {
+      background: #0b1119;
+      border-color: rgba(255,255,255,.2);
+    }
+
+    html[data-color-mode="dark"] #readPromptBadge {
+      color: #7dd3fc;
+    }
+
     html[data-color-mode="dark"] #manualTraceHead th,
     html[data-color-mode="dark"] #autoTraceDomTable thead th {
       background: #202b38;
@@ -5702,12 +5711,6 @@
           <div id="viewConsole" class="flex-1 flex flex-col bg-black/75 p-3.5 font-mono-code text-xs sm:text-sm overflow-y-auto relative">
             <div id="terminalOutput" class="whitespace-pre-wrap break-words leading-relaxed text-slate-200 flex-1"></div>
             
-            <!-- Interactive Read/ReadLn Input Bar (Shown dynamically when program calls Read/ReadLn) -->
-            <form id="interactiveReadForm" class="hidden mt-2 pt-2 border-t border-white/15 items-center gap-2">
-              <span class="text-xs font-semibold px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 border border-sky-400/30 animate-pulse-glow" id="readPromptBadge">ReadLn Input:</span>
-              <input id="interactiveReadInput" type="text" placeholder="Type value & press Enter..." class="flex-1 bg-white/10 border border-white/25 rounded-lg px-2.5 py-1 text-white focus:outline-none focus:border-sky-400 font-mono-code text-xs" />
-              <button type="submit" class="btn-accent-glass px-3 py-1 rounded-lg text-xs">Enter ↵</button>
-            </form>
           </div>
 
         </div>
@@ -5753,6 +5756,13 @@
               <button id="btnClearTrace" class="liquid-pill px-2 py-1 rounded-lg text-[11px] text-slate-300 hover:text-white" title="Clear Manual Processing Table">Reset Table</button>
             </div>
           </div>
+
+          <!-- Interactive Read/ReadLn input is kept with Manual Processing so it stays available when the CRT is hidden. -->
+          <form id="interactiveReadForm" class="hidden mx-3 mt-2 px-3 py-2 border border-slate-300 rounded-lg bg-slate-100/80 items-center gap-2">
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-sky-500/20 text-sky-700 border border-sky-500/30 animate-pulse-glow" id="readPromptBadge">Read/ReadLn Input:</span>
+            <input id="interactiveReadInput" type="text" placeholder="Type value & press Enter..." class="flex-1 bg-white border border-slate-300 rounded-lg px-2.5 py-1 text-slate-800 focus:outline-none focus:border-sky-400 font-mono-code text-xs" />
+            <button type="submit" class="btn-accent-glass px-3 py-1 rounded-lg text-xs">Enter ↵</button>
+          </form>
 
           <!-- Automatic Manual Processing Trace Table -->
           <div id="subViewManualTrace" class="flex-1 overflow-auto p-3">
@@ -8048,7 +8058,11 @@
       const form = document.getElementById('interactiveReadForm');
       const input = document.getElementById('interactiveReadInput');
       const badge = document.getElementById('readPromptBadge');
-      badge.textContent = `ReadLn (${varLabel}):`;
+      const manualState = workspacePanelStates.manual;
+      if (manualState.closed || manualState.closing || manualState.minimized) {
+        setPanelClosed('manual', false);
+      }
+      badge.textContent = `Read/ReadLn (${varLabel}):`;
       form.classList.remove('hidden');
       form.classList.add('flex');
       input.value = '';
